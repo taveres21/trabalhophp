@@ -1,3 +1,12 @@
+<?php
+
+    session_start();
+
+    if(isset($_SESSION['id'])) {
+        header('Location: ./view/home-view.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

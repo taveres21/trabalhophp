@@ -1,3 +1,8 @@
+<?php
+
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +13,11 @@
 </head>
 <body>
     <?php require_once '../components/navbar.php' ?>
-    <h2>Home</h2>
-    
+    <h2>
+    <?php
+      echo $_SESSION['nome'];
+    ?>
+      </h2>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

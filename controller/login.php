@@ -17,28 +17,16 @@ switch ($acao) {
         $email = $_POST["email"];
         $senha = $_POST["senha"];
 
-       
-        $hash = password_hash($senha,PASSWORD_DEFAULT);
-        if(password_verify($senha,$hash)){
-            session_start();
-
-            $_SESSION["loggedin"] = true;
-            $_SESSION["id"] = $id;
-            $_SESSION["email"] = $email; 
-        }else{
-            echo 'teste';
-            header('../index.php');
-        }
-
         $usuario = Login($email, $senha);
 
-        if ($usuario) {
-            require_once('../view/home-view.php');
-            //Configurar session
+        if ($usuario <> null) {
+            $_SESSION['nome'] = $usuario['nome'];
+            $_SESSION['dt_nasc'] = $usuario['dt_nasc'];
+            $_SESSION['email'] = $usuario['email'];
+            
+            header('Location: ../view/home-view.php');
         }else {
-            // Avisar senha incorreta ou usuário inexistente e corrigir a falta do css
-            setSenhaIncorreta(true);
-            header('Location: ../index.php');
+            header('Location:../index.php?Invalid= Usuário e senha incorretos');
         }
 
         exit;
@@ -59,7 +47,8 @@ switch ($acao) {
 
         break;
     case "sair":
-        require_once('../index.php');
+        session_destroy();
+        header('Location: ../index.php');
         break;
 }
 

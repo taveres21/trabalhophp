@@ -1,15 +1,15 @@
 <?php
 
 require_once('conexao.php');
-
+session_start();
 
 function Login(string $email, string $senha) {
     $conn = AbrirConexaoBanco();
 
     $mysql_query = "SELECT
-     `id`,`email`,`senha` 
+     `id`,`email`,`senha`,`nome`,`dt_nasc` 
      FROM `usuario`
-     WHERE `email` = '$email';";
+     WHERE `email` = '$email' and `senha`= '$senha';";
 
     $result = $conn->query($mysql_query);
 
@@ -25,11 +25,8 @@ function Login(string $email, string $senha) {
     $usuario = mysqli_fetch_assoc($result);
 
     FecharConexaoBanco($conn);
-
-    echo $usuario['senha'];
     
-    return $usuario['senha'] == $senha;
-    
+    return $usuario; 
 }
 
 function Cadastro(
@@ -38,16 +35,13 @@ function Cadastro(
     ) {
 
     $conn = AbrirConexaoBanco();
-    
-    // Verificar se já existe email cadastrado
    
     $mysql_query = "SELECT
      `email`
      FROM `usuario`
      WHERE `email` = '$email';";
 
-    if ($conn->query($mysql_query) <> null) {
-        
+    if ($conn->query($mysql_query) <> null) {      
         return false;
     }
     

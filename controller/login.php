@@ -2,6 +2,11 @@
 
 require_once('../contexto/livro-contexto.php');
 
+$email  = '';
+$senha  = '';
+$id     =  0;
+$dtnasc = '';
+
 $acao = $_GET["acao"] ?? "";
 
 switch ($acao) {
@@ -9,6 +14,7 @@ switch ($acao) {
         require_once('../index.php');
         break;
     case "entrar":
+        
         $email = $_POST["email"];
         $senha = $_POST["senha"];
         $hash = password_hash($senha,PASSWORD_DEFAULT);
@@ -17,7 +23,7 @@ switch ($acao) {
 
             $_SESSION["loggedin"] = true;
             $_SESSION["id"] = $id;
-            $_SESSION["email"] = $username; 
+            $_SESSION["email"] = $email; 
         }else{
 
         }

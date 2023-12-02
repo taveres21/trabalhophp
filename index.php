@@ -17,7 +17,7 @@
                     <input placeholder="Email" type="text" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <input placeholder="Senha" type="senha" id="senha" name="senha" required>
+                    <input placeholder="Senha" type="password" id="senha" name="senha" required>
                 </div>
                 <div class="form-group" id="form-buttons-login">
                     <button  class="btn btn-primary" type="submit">Entrar</button>

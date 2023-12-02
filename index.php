@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='./bootstrap/css/bootstrap.min.css'>
     <link rel='stylesheet' href='./styles/index.css'>
+    <link rel='stylesheet' href='../public/styles/login.css'>
+    
     <title>Booklist</title>
     <style>
    
@@ -14,8 +16,22 @@
     <div class="welcome-container">
         <h1>Bem-vindo ao Booklist!</h1>
         <p>Mantenha uma lista de todos os livros que leu!</p>
-        <a href="controller/login.php" class="btn btn-primary">Entrar</a>
-        <a href="controller/login.php?acao=cadastrar" class="btn btn-secondary">Cadastrar</a>
+        <div class="login-container">
+            <form class="login-form" action="../controller/login.php?acao=entrar" method="post">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="senha" id="senha" name="senha" required>
+                </div>
+                <div class="form-group">
+                    <button  class="btn btn-primary" type="submit">Entrar</button>
+                    <a class="btn btn-primary" href="./signup.php">Cadastrar</a>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>

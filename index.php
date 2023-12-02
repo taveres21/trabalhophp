@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='./bootstrap/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='./styles/index.css'>
-    <link rel='stylesheet' href='../public/styles/login.css'>
-    
+    <link rel='stylesheet' href='./public/styles/index.css'>
     <title>Booklist</title>
     <style>
    
@@ -19,16 +17,14 @@
         <div class="login-container">
             <form class="login-form" action="../controller/login.php?acao=entrar" method="post">
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="text" id="email" name="email" required>
+                    <input placeholder="Email" type="text" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="senha">Senha:</label>
-                    <input type="senha" id="senha" name="senha" required>
+                    <input placeholder="Senha" type="senha" id="senha" name="senha" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="form-buttons-login">
                     <button  class="btn btn-primary" type="submit">Entrar</button>
-                    <a class="btn btn-primary" href="./controller/login.php?acao=cadastrar">Cadastrar</a>
+                    <a class="btn btn-secondary" href="./controller/login.php?acao=cadastrar">Cadastrar</a>
                 </div>
             </form>
         </div>

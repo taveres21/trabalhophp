@@ -41,7 +41,9 @@ function Cadastro(
      FROM `usuario`
      WHERE `email` = '$email';";
 
-    if ($conn->query($mysql_query) <> null) {      
+    $checkUser = mysqli_fetch_assoc($conn->query($mysql_query));
+
+    if ($checkUser['email'] <> null) {      
         return false;
     }
     

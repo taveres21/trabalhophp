@@ -43,7 +43,7 @@ switch ($acao) {
         if ($confirma) {
             header('Location: ../index.php');
         } else {
-            header('Location: ../view/cadastrar-view.php');
+            header('Location: ../view/cadastrar-view.php?Invalid= Usuário já existente');
         }
 
         break;

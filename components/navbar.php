@@ -14,7 +14,7 @@
                 <a class="nav-link" href="./lista.php?acao=consultar">Listas</a>
             </li>
         </ul>
-        <form class="d-flex" action="./login.php?acao=sair" method="POST" role="search">
+        <form class="d-flex" action="../controller/login.php?acao=sair" method="POST" role="search">
             <!--<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
             <button class="btn btn-danger" type="submit">Sair</button>
         </form>

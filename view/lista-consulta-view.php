@@ -21,7 +21,7 @@
             <input placeholder="Pesquisar por nome do livro ou autor..." class="input-busca" type="text" id="pesquisa" name="pesquisa" value="<?=$_POST["pesquisa"] ?? ""?>">
             <div class="search-right search-bar">
                 <button class="button-buscar" type="submit"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
-                <a style="color: white;text-decoration: none;cursor: pointer;" href="../controller/livro.php?acao=cadastrar"><button class="button-buscar" type="button"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button></a>
+                <a style="color: white;text-decoration: none;cursor: pointer;" href="../controller/lista.php?acao=cadastrar"><button class="button-buscar" type="button"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button></a>
             </div>
           </form>
         </div>
@@ -31,10 +31,8 @@
       <thead>
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Isbn</th>
-      <th scope="col">Título</th>
-      <th scope="col">Autor</th>
-      <th scope="col">Sinopse</th>
+      <th scope="col">Nome da Lista</th>
+      <th scope="col">Livros</th>
       <th style="width: 0;" scope="col">Editar</th>
       <th style="width: 0;" scope="col">Remover</th>
     </tr>
@@ -42,17 +40,15 @@
   <tbody>
     <?php
 
-      if (isset($_REQUEST["livros"])) {
-        $dados = $_REQUEST["livros"];
+      if (isset($_REQUEST["listas"])) {
+        $dados = $_REQUEST["listas"];
         if(count($dados) > 0){
           for ($i=0; $i < count($dados); $i++) {
             echo "
             <tr>
-            <th scope='row'>".$dados[$i]["id"]."</th>
-              <td>".$dados[$i]["isbn"]."</td>
-              <td>".$dados[$i]["titulo"]."</td>
-              <td>".$dados[$i]["autor"]."</td>
-              <td class='box'>".$dados[$i]["sinopse"]."</td>
+              <th scope='row'>".$dados[$i]["id"]."</th>
+              <td>".$dados[$i]["nome"]."</td>
+              <td>".$dados[$i]["livros"]."</td>
               <td align='center'><a href='../controller/livro.php?acao=editar&id=".$dados[$i]["id"]."' class='editar' title='Editar'><img src='../public/pen.png' alt='Editar'></a></td>
               <td align='center'><a href='../controller/livro.php?acao=deletar&id=".$dados[$i]["id"]."' class='excluir' title='Excluir'><img src='../public/delete.png' alt='Excluir'></a></td>
             </tr> 

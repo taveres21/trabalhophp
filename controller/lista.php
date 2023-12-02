@@ -10,7 +10,15 @@ switch ($acao) {
     case "consultar":
         //Tela Consulta. Ação: Entrar na página
         if ($method == "GET") {
-            #$_REQUEST["livros"] = SelecionarTodosLivros();
+            $listas = array(
+                array(
+                 'id' => 1,
+                 'nome' => 'Lista de Ação',
+                 'livros' => 'Fogo e Água<br>Uma aventura<br>Ação e Reação'
+                )
+            );
+
+            $_REQUEST["listas"] = $listas;
             require_once("../view/lista-consulta-view.php");
         }
         //Tela Consulta. Ação: Pesquisar no input
@@ -23,7 +31,7 @@ switch ($acao) {
     case "cadastrar":
         //Tela Cadastrar. Ação: Entrar na página
         if ($method == "GET") {
-           // require_once("../view/livro-view.php");
+           require_once("../view/lista-view.php");
         }
         //Tela Cadastrar. Ação: Cadastrar Lista
         if($method == "POST") {

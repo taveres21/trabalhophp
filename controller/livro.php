@@ -31,7 +31,7 @@ switch ($acao) {
             $titulo = $_POST["titulo"] ?? "";
             $sinopse = $_POST["sinopse"] ?? "";
             #$autor = $_POST["autor"] ?? "";
-            AdicionarLivro($isbn,$titulo,$sinopse,$autor);
+            AdicionarLivro($isbn,$titulo,$sinopse/*,$autor*/);
 
             header('Location: livro.php?acao=consultar');
         }
@@ -50,7 +50,7 @@ switch ($acao) {
             $titulo = $_POST["titulo"] ?? "";
             $sinopse = $_POST["sinopse"] ?? "";
             #$autor = $_POST["autor"] ?? "";
-            AlterarLivro($id,$isbn,$titulo,$sinopse,$autor);
+            AlterarLivro($id,$isbn,$titulo,$sinopse/*,$autor*/);
 
             header('Location: livro.php?acao=consultar');
         }

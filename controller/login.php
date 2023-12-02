@@ -37,7 +37,8 @@ switch ($acao) {
             //Configurar session
         }else {
             // Avisar senha incorreta ou usuário inexistente e corrigir a falta do css
-            require_once('../index.php');
+            setSenhaIncorreta(true);
+            header('Location: ../index.php');
         }
 
         exit;
@@ -51,9 +52,9 @@ switch ($acao) {
         $confirma = cadastro($nome,$dtnasc,$email,$senha);
 
         if ($confirma) {
-            require_once('../index.php');
+            header('Location: ../index.php');
         } else {
-            require_once('../view/cadastrar-view.php');
+            header('Location: ../view/cadastrar-view.php');
         }
 
         break;

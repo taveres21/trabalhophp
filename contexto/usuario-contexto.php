@@ -2,6 +2,7 @@
 
 require_once('conexao.php');
 
+
 function Login(string $email, string $senha) {
     $conn = AbrirConexaoBanco();
 
@@ -24,6 +25,8 @@ function Login(string $email, string $senha) {
     $usuario = mysqli_fetch_assoc($result);
 
     FecharConexaoBanco($conn);
+
+    echo $usuario['senha'];
     
     return $usuario['senha'] == $senha;
     
@@ -47,7 +50,6 @@ function Cadastro(
         
         return false;
     }
-
     
     $max_id = mysqli_fetch_assoc($conn->query("SELECT max(id) maxid FROM usuario;"));
     $id = $max_id['maxid'] + 1;

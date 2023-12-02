@@ -1,7 +1,9 @@
-<?php
-    $dir = realpath($_SERVER["DOCUMENT_ROOT"]);
-?>
+<?php 
 
+    require_once('conexao.php');
+    session_start();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">

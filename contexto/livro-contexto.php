@@ -2,19 +2,17 @@
 
 require_once('conexao.php');
 
-function AdicionarLivro(int $isbn,string $titulo,string $sinopse,string $autor) : int {
+function AdicionarLivro(int $isbn,string $titulo,string $sinopse/*,string $autor*/) : int {
     $conn = AbrirConexaoBanco();
 
     $mysql_query = "INSERT INTO `livro`
     (`isbn`,
     `titulo`,
-    `sinopse`,
-    `autor`)
+    `sinopse`)
     VALUES
     ($isbn,
     '$titulo',
-    '$sinopse',
-    '$autor');";
+    '$sinopse');";
 
     $result = $conn->query($mysql_query);
 
@@ -32,14 +30,13 @@ function AdicionarLivro(int $isbn,string $titulo,string $sinopse,string $autor) 
     return 0;
 }
 
-function AlterarLivro(int $id, int $isbn,string $titulo,string $sinopse,string $autor) : bool {
+function AlterarLivro(int $id, int $isbn,string $titulo,string $sinopse/*,string $autor*/) : bool {
     $conn = AbrirConexaoBanco();
     $mysql_query = "UPDATE `livro`
     SET
     `isbn` = $isbn,
     `titulo` = '$titulo',
-    `sinopse` = \"$sinopse\",
-    `autor` = '$autor'
+    `sinopse` = \"$sinopse\"
     WHERE `id` = $id;
     ";
 

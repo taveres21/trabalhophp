@@ -31,7 +31,7 @@ switch ($acao) {
         }
         break;
     case "cadastrar":
-        require_once('../view/login-view.php');
+        require_once('../view/cadastrar-view.php');
         break;
     case "sair":
         require_once('../view/login-view.php');

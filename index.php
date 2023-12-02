@@ -14,8 +14,8 @@
     <div class="welcome-container">
         <h1>Bem-vindo ao Booklist!</h1>
         <p>Mantenha uma lista de todos os livros que leu!</p>
-        <a href="controller/login.php" class="btn-login">Entrar</a>
-        <a href="controller/login.php?acao=cadastrar" class="btn-login">Cadastrar</a>
+        <a href="controller/login.php" class="btn btn-primary">Entrar</a>
+        <a href="controller/login.php?acao=cadastrar" class="btn btn-secondary">Cadastrar</a>
     </div>
 </body>
 </html>

@@ -14,7 +14,6 @@ switch ($acao) {
         require_once('../index.php');
         break;
     case "entrar":
-        
         $email = $_POST["email"];
         $senha = $_POST["senha"];
         $hash = password_hash($senha,PASSWORD_DEFAULT);
@@ -25,9 +24,10 @@ switch ($acao) {
             $_SESSION["id"] = $id;
             $_SESSION["email"] = $email; 
         }else{
-
+            echo 'teste';
+            header('../index.php');
         }
-        # Valida usuário
+        
         exit;
 
         if (true) {

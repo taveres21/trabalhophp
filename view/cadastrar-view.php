@@ -28,8 +28,9 @@
                     <input placeholder="Senha" type="password" id="senha" name="senha" required>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary" type="submit">Criar Conta</button>
-                    <a href="./signup.php"></a>
+                    <button class="btn btn-primary" type="submit" action="../controller/login.php?acao=cadastrar">
+                        Criar Conta
+                    </button>
                 </div>
             </form>
         </div>

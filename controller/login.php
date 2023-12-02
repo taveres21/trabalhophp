@@ -6,7 +6,7 @@ $acao = $_GET["acao"] ?? "";
 
 switch ($acao) {
     case "":
-        require_once('../view/login-view.php');
+        require_once('../index.php');
         break;
     case "entrar":
         $email = $_POST["email"];
@@ -31,7 +31,11 @@ switch ($acao) {
         }
         break;
     case "cadastrar":
-        require_once('../view/cadastrar-view.php');
+        $email  = $_POST["email"];
+        $senha  = $_POST["senha"];
+        $dtnasc = $_POST["dtnasc"];
+        $nome   = $_POST["nome"];
+
         break;
     case "sair":
         require_once('../index.php');

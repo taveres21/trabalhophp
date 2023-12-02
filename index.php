@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-group" id="form-buttons-login">
                     <button  class="btn btn-primary" type="submit">Entrar</button>
-                    <a class="btn btn-secondary" href="./controller/login.php?acao=cadastrar">Cadastrar</a>
+                    <a class="btn btn-secondary" href="./view/cadastrar-view.php">Cadastrar</a>
                 </div>
             </form>
         </div>

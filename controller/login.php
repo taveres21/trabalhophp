@@ -1,6 +1,6 @@
 <?php
 
-require_once('../contexto/livro-contexto.php');
+require_once('../contexto/usuario-contexto.php');
 
 $email  = '';
 $senha  = '';
@@ -16,6 +16,8 @@ switch ($acao) {
     case "entrar":
         $email = $_POST["email"];
         $senha = $_POST["senha"];
+
+       
         $hash = password_hash($senha,PASSWORD_DEFAULT);
         if(password_verify($senha,$hash)){
             session_start();
@@ -27,14 +29,17 @@ switch ($acao) {
             echo 'teste';
             header('../index.php');
         }
-        
-        exit;
 
-        if (true) {
+        $usuario = Login($email, $senha);
+
+        if ($usuario) {
             require_once('../view/home-view.php');
         }else {
+            // Avisar senha incorreta ou usuário inexistente e corrigir a falta do css
             require_once('../index.php');
         }
+
+        exit;
         break;
     case "cadastrar":
         $email  = $_POST["email"];

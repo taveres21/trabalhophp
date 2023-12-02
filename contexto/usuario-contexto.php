@@ -8,7 +8,7 @@ function Login(string $email, string $senha) {
     $mysql_query = "SELECT
      `id`,`email`,`senha` 
      FROM `usuario`
-     WHERE `email` = $email;";
+     WHERE `email` = '$email';";
 
     $result = $conn->query($mysql_query);
 
@@ -24,8 +24,9 @@ function Login(string $email, string $senha) {
     $usuario = mysqli_fetch_assoc($result);
 
     FecharConexaoBanco($conn);
-
-    return $usuario;
+    
+    return $usuario['senha'] == $senha;
+    
 }
 
 

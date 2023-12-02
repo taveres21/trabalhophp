@@ -1,3 +1,8 @@
+<?php
+    $dir = realpath($_SERVER["DOCUMENT_ROOT"]);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

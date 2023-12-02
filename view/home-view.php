@@ -15,7 +15,7 @@
     <?php require_once '../components/navbar.php' ?>
     <h2>
     <?php
-      echo $_SESSION['nome'];
+      echo $_SESSION['id'];
     ?>
       </h2>
     <script src="../bootstrap/js/bootstrap.min.js"></script>

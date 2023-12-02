@@ -20,10 +20,10 @@ switch ($acao) {
         $usuario = Login($email, $senha);
 
         if ($usuario <> null) {
-            $_SESSION['id'] = $usuario['id'];
-            $_SESSION['nome'] = $usuario['nome'];
+            $_SESSION['id']      = $usuario['id'];
+            $_SESSION['nome']    = $usuario['nome'];
             $_SESSION['dt_nasc'] = $usuario['dt_nasc'];
-            $_SESSION['email'] = $usuario['email'];
+            $_SESSION['email']   = $usuario['email'];
             
             header('Location: ../view/home-view.php');
         }else {

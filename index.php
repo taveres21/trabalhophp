@@ -6,9 +6,6 @@
     <link rel='stylesheet' href='./bootstrap/css/bootstrap.min.css'>
     <link rel='stylesheet' href='./public/styles/index.css'>
     <title>Booklist</title>
-    <style>
-   
-    </style>
 </head>
 <body>
     <div class="welcome-container">

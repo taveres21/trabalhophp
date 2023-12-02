@@ -27,14 +27,14 @@ switch ($acao) {
         if (true) {
             require_once('../view/home-view.php');
         }else {
-            require_once('../view/login-view.php');
+            require_once('../index.php');
         }
         break;
     case "cadastrar":
         require_once('../view/cadastrar-view.php');
         break;
     case "sair":
-        require_once('../view/login-view.php');
+        require_once('../index.php');
         break;
 }
 

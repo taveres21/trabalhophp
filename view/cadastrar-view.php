@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='./styles/login.css'>
     <link rel='stylesheet' href='../bootstrap/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='../public/styles/login.css'>
+    <link rel='stylesheet' href='../public/styles/cadastrar.css'>
     <title>Cadastrar</title>
 </head>
 <body>
@@ -18,16 +18,14 @@
                     <input type="text" id="nome" name="nome" placeholder="Nome" required>
                 </div>
                 <div class="form-group">
-                    <label for="dtnasc">Data de Nascimento:</label>
+                    <label for="dtnasc">Data de Nascimento:</label><br>
                     <input type="date" id="dtnasc" name="dtnasc" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
                 </div>
                 <div class="form-group">
-                    <label for="Email">Email:</label>
-                    <input type="text" id="Email" name="Email" required>
+                    <input placeholder="Email" type="text" id="Email" name="Email" required>
                 </div>
                 <div class="form-group">
-                    <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required>
+                    <input placeholder="Senha" type="password" id="senha" name="senha" required>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary" type="submit">Criar Conta</button>

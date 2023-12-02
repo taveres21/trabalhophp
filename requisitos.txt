@@ -1,0 +1,5 @@
+| | Tela de Login Crud
+| | Tela de Consulta por usuário CRUD
+|X| Tela de Cadastro do Livro - João
+| | Lógica Tela de Cadastro do Livro Crud - Para Usuários Admin - Davi
+| | Tela de Cadastro de Lista

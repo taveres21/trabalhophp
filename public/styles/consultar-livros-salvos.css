@@ -1,0 +1,188 @@
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.livros-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0px 40px;
+    width: 80%;
+}
+
+h2 {
+    text-align: center;
+}
+
+.search-bar {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-bar button {
+    width: 80px;
+}
+
+.search-bar span {
+    margin-right: 10px;
+    
+}
+
+.search-bar label {
+    flex: 1;
+    margin-right: 10px;
+    
+    
+    
+}
+
+.search-bar input {
+    flex: 2;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #555;
+    
+}
+
+.search-bar button {
+    flex: 1;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+.lista-livros {
+    list-style: none;
+    padding: 0;
+    color: #555;
+}
+
+.lista-livros li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #555;
+}
+
+.lista-livros li span {
+    display: block; /* Alteração para exibir os spans em uma nova linha */
+    margin: 5px;
+    color: #555;
+}
+
+.lista-livros li .opcoes {
+    display: flex;
+    color: #555;
+}
+
+.lista-livros li a {
+    margin-left: 10px;
+    color: #555;
+}
+
+/* Adicione os estilos necessários para os ícones de editar e excluir, por exemplo: */
+.editar img,
+.excluir img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.main {
+    height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.menu-secundario {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    align-items: center;
+    
+}
+
+.menu-secundario form {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    width:100%;
+}
+
+.input-busca {
+    height: 44px;
+    padding: 16px;
+}
+
+.search-right {
+    gap: 8px;
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0px 8px 8px;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-login {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+
+@media screen and (max-width:520px) {
+    
+
+    .livros-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 0px 16px;
+        width: 92%;
+    }
+
+    .search-bar button {
+        width: 40px;
+    }
+}
+
+.box {
+    max-width: 250px;
+    white-space: nowrap;                  
+    overflow: hidden; /* "overflow" value must be different from "visible" */
+    text-overflow:    ellipsis;
+}

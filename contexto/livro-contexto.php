@@ -86,8 +86,7 @@ function SelecionarLivroPorId(int $id) : array {
     $mysql_query = "SELECT `id`,
     `isbn`,
     `titulo`,
-    `sinopse`,
-    `autor`
+    `sinopse`
     FROM `livro` WHERE `id` = $id;";
 
     $result = $conn->query($mysql_query);
@@ -114,10 +113,9 @@ function SelecionarTodosLivros(string $pesquisa = "") : array {
     $mysql_query = "SELECT `l`.`id`,
     `l`.`isbn`,
     `l`.`titulo`,
-    `l`.`sinopse`,
-    `l`.`autor`
+    `l`.`sinopse`
     FROM `livro` as `l`
-    WHERE IF('$pesquisa' <> '',CONCAT(`l`.`isbn`,`l`.`titulo`,`l`.`sinopse`,`l`.`autor`) LIKE CONCAT('%',REPLACE('$pesquisa','','%'),'%'),true);";
+    WHERE IF('$pesquisa' <> '',CONCAT(`l`.`isbn`,`l`.`titulo`,`l`.`sinopse`) LIKE CONCAT('%',REPLACE('$pesquisa','','%'),'%'),true);";
 
     $result = $conn->query($mysql_query);
 
@@ -139,8 +137,8 @@ function SelecionarTodosLivros(string $pesquisa = "") : array {
                     'id' => $row["id"],
                     'isbn' => $row["isbn"],
                     'titulo' => $row["titulo"],
-                    'sinopse' => $row["sinopse"],
-                    'autor'=>$row["autor"]
+                    'sinopse' => $row["sinopse"]#,
+                    #'autor'=>$row["autor"]
                 ];
             }
         }

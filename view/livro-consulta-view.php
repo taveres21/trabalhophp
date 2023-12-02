@@ -51,7 +51,7 @@
             <th scope='row'>".$dados[$i]["id"]."</th>
               <td>".$dados[$i]["isbn"]."</td>
               <td>".$dados[$i]["titulo"]."</td>
-              <td>".$dados[$i]["autor"]."</td>
+              <td>"./*$dados[$i]["autor"]*/""."</td>
               <td class='box'>".$dados[$i]["sinopse"]."</td>
               <td align='center'><a href='../controller/livro.php?acao=editar&id=".$dados[$i]["id"]."' class='editar' title='Editar'><img src='../public/pen.png' alt='Editar'></a></td>
               <td align='center'><a href='../controller/livro.php?acao=deletar&id=".$dados[$i]["id"]."' class='excluir' title='Excluir'><img src='../public/delete.png' alt='Excluir'></a></td>

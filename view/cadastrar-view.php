@@ -13,7 +13,7 @@
     <div class="consultar-livros-container login-menu-container">
     <div class="login-container">
             <h2>Entrar</h2>
-            <form class="login-form" action="../controller/login.php?acao=entrar" method="post">
+            <form class="login-form" action="../controller/login.php?acao=cadastrar" method="post">
                 <div class="form-group">
                     <input type="text" id="nome" name="nome" placeholder="Nome" required>
                 </div>
@@ -22,7 +22,7 @@
                     <input type="date" id="dtnasc" name="dtnasc" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
                 </div>
                 <div class="form-group">
-                    <input placeholder="Email" type="text" id="Email" name="Email" required>
+                    <input placeholder="Email" type="text" id="email" name="email" required>
                 </div>
                 <div class="form-group">
                     <input placeholder="Senha" type="password" id="senha" name="senha" required>

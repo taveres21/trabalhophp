@@ -12,7 +12,7 @@ if (isset($_REQUEST["livro"])) {
     $codigo = $dados["id"];
     $isbn = $dados["isbn"];
     $titulo = $dados["titulo"];
-    $autor = $dados["autor"];
+    #$autor = $dados["autor"];
     $sinopse = $dados["sinopse"];
 }
 

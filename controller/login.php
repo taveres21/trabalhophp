@@ -34,6 +34,7 @@ switch ($acao) {
 
         if ($usuario) {
             require_once('../view/home-view.php');
+            //Configurar session
         }else {
             // Avisar senha incorreta ou usuário inexistente e corrigir a falta do css
             require_once('../index.php');
@@ -42,10 +43,18 @@ switch ($acao) {
         exit;
         break;
     case "cadastrar":
+        $nome   = $_POST["nome"];
+        $dtnasc = $_POST["dtnasc"];
         $email  = $_POST["email"];
         $senha  = $_POST["senha"];
-        $dtnasc = $_POST["dtnasc"];
-        $nome   = $_POST["nome"];
+       
+        $confirma = cadastro($nome,$dtnasc,$email,$senha);
+
+        if ($confirma) {
+            require_once('../index.php');
+        } else {
+            require_once('../view/cadastrar-view.php');
+        }
 
         break;
     case "sair":

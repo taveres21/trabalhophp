@@ -2,13 +2,13 @@
 
 require_once('conexao.php');
 
-function AdicionarLista(string $nome) : int {
+function AdicionarLista(string $nome, string $usu_id) : int {
     $conn = AbrirConexaoBanco();
 
     $mysql_query = "INSERT INTO `booklist`.`lista`
-    (`nome`)
+    (`nome`,`usu_id`)
     VALUES
-    ($nome);
+    ('$nome','$usu_id');
     ";
 
     $result = $conn->query($mysql_query);
@@ -97,9 +97,17 @@ function SelecionarLivroPorId(int $id) : array {
     return $lista;
 }
 
-function SelecionarTodasListas() : array {
-    return array();
-    // Não Implementado
+function SelecionarTodasListas(string $usu_id) : array {
+    $conn = AbrirConexaoBanco();
+
+    $mysql_query = "SELECT
+     `id`,`nome`,`usu_id`
+     FROM `lista`
+     WHERE `usu_id` = '$usu_id';";
+
+    $result = mysqli_fetch_array($conn->query($mysql_query));
+    
+    return $result;
 }
 
 ?>

@@ -2,8 +2,11 @@
 
 require_once('../contexto/lista-contexto.php');
 
+session_start();
+
 $acao = $_GET["acao"];
 $method = $_SERVER['REQUEST_METHOD'];
+$usu_id = $_SESSION['id'];
 
 switch ($acao) {
     
@@ -30,18 +33,21 @@ switch ($acao) {
         break;
     case "cadastrar":
         //Tela Cadastrar. Ação: Entrar na página
-        if ($method == "GET") {
-           require_once("../view/lista-view.php");
-        }
+        // if ($method == "GET") {
+        //    require_once("../view/lista-view.php");
+        // }
         //Tela Cadastrar. Ação: Cadastrar Lista
-        if($method == "POST") {
+        // if($method == "POST") {
             /*$isbn = (int)$_POST["isbn"] ?? 0;
             $titulo = $_POST["titulo"] ?? "";
             $sinopse = $_POST["sinopse"] ?? "";
             AdicionarLivro($isbn,$titulo,$sinopse);*/
 
-            header('Location: lista.php?acao=consultar');
-        }
+            // header('Location: lista.php?acao=consultar');
+        // }
+        $nome = $_POST['nome'];
+        AdicionarLista($nome, $usu_id);
+        header('Location: ../view/home-view.php');
         break;
         case "editar":
             //Tela Editar. Ação: Entrar na página

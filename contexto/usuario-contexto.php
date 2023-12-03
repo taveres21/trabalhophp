@@ -47,13 +47,10 @@ function Cadastro(
         return false;
     }
     
-    $max_id = mysqli_fetch_assoc($conn->query("SELECT max(id) maxid FROM usuario;"));
-    $id = $max_id['maxid'] + 1;
-
     $mysql_query = "INSERT INTO `usuario` 
-    (`id`,`nome`,`dt_nasc`,`email`,`senha`)
+    (`nome`,`dt_nasc`,`email`,`senha`)
     VALUES
-    ($id,'$nome','$dtnasc','$email','$senha')
+    ('$nome','$dtnasc','$email','$senha')
     ";
 
     $result = $conn->query($mysql_query);

@@ -29,12 +29,13 @@
                 <?php 
                     $listas = SelecionarTodasListas($_SESSION['id']);
                     foreach($listas as $lista) {
-                        echo "<li>$lista</li>";
+                        echo "<li>". $lista['nome'].'</li>';
                     }
                 ?>
             </ul>
         </div>
         <div id="menu-add-lista" class="menu-add-lista">
+            <h3>Adicionar Lista</h3>
             <form class="login-form" action="../controller/lista.php?acao=cadastrar" method="post">
                 <div class="form-group">
                     <input placeholder="nome" type="text" id="nome" name="nome">
@@ -46,7 +47,6 @@
             </form>
         </div>
     </div>
-
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script>
         const open = document.getElementById('add-lista');
@@ -59,7 +59,6 @@
         close.addEventListener('click', () => {
             menuAddLista.classList.remove('show');
         });
-        
     </script>
 </body>
 </html>

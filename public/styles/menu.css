@@ -44,7 +44,6 @@ body {
     cursor: pointer;
 }
 
-
 .menu-add-lista {
     opacity: 0;
     text-align: center;
@@ -52,8 +51,8 @@ body {
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 600px;  
-    height: 600px;
+    width: 200px;  
+    height: 200px;
     
 }
 

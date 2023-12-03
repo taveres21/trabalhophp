@@ -101,13 +101,38 @@ function SelecionarTodasListas(string $usu_id) : array {
     $conn = AbrirConexaoBanco();
 
     $mysql_query = "SELECT
-     `id`,`nome`,`usu_id`
+     `nome`
      FROM `lista`
      WHERE `usu_id` = '$usu_id';";
 
-    $result = mysqli_fetch_array($conn->query($mysql_query));
+
+    $result = $conn->query($mysql_query);
+
     
-    return $result;
+    if ($result === TRUE) {
+        $msg =  "select success";
+        $msgerror = "";
+    }
+    else {
+        $msg =  "select error";
+        $msgerror = $conn->error;
+    }
+
+    if ($result === null) {
+        return array();
+    }
+
+    $listas = resultToArray($result);
+    
+    return $listas;
+}
+
+function resultToArray($result) {
+    $rows = array();
+    while($row = $result->fetch_assoc()) {
+        $rows[] = $row;
+    }
+    return $rows;
 }
 
 ?>
